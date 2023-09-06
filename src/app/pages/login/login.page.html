@@ -1,0 +1,36 @@
+
+<ion-content class="ion-padding">
+  <div class="logo-container">
+    <ion-img src="../../../assets/RegisterAPPlogo.svg" alt="Logo de la aplicación"></ion-img>
+  </div>
+  <div class="login-text">
+    <p>Iniciar sesión</p>
+  </div>
+  <form>
+    <ion-item class="email-text">
+      <ion-label position="floating">u.suario@duocuc.cl</ion-label>
+      <ion-input type="email" name="email" required></ion-input>
+    </ion-item>
+
+    <ion-item class="password-text" >
+      <ion-label position="floating">Introduce tu contraseña</ion-label>
+      <ion-input type="password" name="password" required></ion-input>
+    </ion-item>
+    
+    <ion-button routerLink="/home" class="boton-login" expand="full"  type="submit">Iniciar sessión</ion-button>
+  </form>
+
+<div class="Google-text">
+  <p>
+    O inicia sesión con Google
+    <ion-button class="boton-google" expand="full" type="submit">
+      <ion-icon name="logo-google" class="icon-google"></ion-icon>
+    </ion-button>
+  </p>
+</div>
+
+  <p class="ion-text-register-forget">
+    <a class="forget-text" routerLink="/register">¿Olvidó su contraseña?</a>
+    <a class="register-text" routerLink="/register">Registrarse</a>
+  </p>
+</ion-content>

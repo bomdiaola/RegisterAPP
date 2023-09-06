@@ -24,3 +24,13 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+ion-content {
+    --background: #ffffff;
+  }
+
+ion-item, ion-input {
+    --background: transparent;
+    border: none; /* Eliminar bordes si es necesario */
+  }
+
