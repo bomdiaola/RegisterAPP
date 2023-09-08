@@ -1,0 +1,43 @@
+.register-title{
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 28px;
+    margin-left: 17px;
+}
+.boton-login{
+    border-radius: 20px;
+    margin-top: 30px;
+    --background: #002138;
+    --color: #ffffff;
+    
+}
+
+.text-TyC{
+    color: #717171;
+    margin-right: 90px;
+.checkbox-item{
+    text-align: left
+}
+}
+ion-checkbox {
+    --size: 22px;
+    --background: #ffffff;
+    --checkbox-background: #ffffff;
+    --checkbox-background-checked: #FBB41C;
+    margin-top: 20px;
+  }
+  
+ion-checkbox::part(container) {
+    border-radius: 7px;
+    border: 2px solid #FBB41C;;
+  }
+
+.login-text{
+    color: #717171;
+    margin-right: 90px;
+}
+
+.login-text-2{
+    color: #FBB41C;
+}

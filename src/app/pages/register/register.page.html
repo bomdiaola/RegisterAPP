@@ -1,13 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding">
+  <div class="register-title">
+    <p>Regístrate</p>
+  </div>
+  <form>
+    <ion-item class="email-text">
+      <ion-label color="light" position="floating">Introduce tu nombre</ion-label>
+      <ion-input type="email" name="email" required></ion-input>
+    </ion-item>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-item class="password-text" >
+      <ion-label color="light" position="floating">Introduce tu contraseña</ion-label>
+      <ion-input type="password" name="password" required></ion-input>
+    </ion-item>
+    
+    <ion-item class="password-text" >
+      <ion-label color="light" position="floating">Confirma tu contraseña</ion-label>
+      <ion-input type="password" name="confirmPassword" required></ion-input>
+    </ion-item>
+
+    <ion-item class="checkbox-item">
+      <ion-label class="text-TyC">Estoy de acuerdo con los Términos, servicios y la politica de privacidad</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="acceptTerms" name="acceptTerms"></ion-checkbox>
+    </ion-item>
+
+    <ion-button routerLink="/login" class="boton-login" expand="block"  type="submit">Iniciar sesión</ion-button>
+  </form>
+
+  <p class="ion-text-register-forget">
+    <a class="login-text">¿Ya tienes una cuenta?</a>
+    <a class="login-text-2" routerLink="/login">Iniciar sesión</a>
+  </p>
 </ion-content>

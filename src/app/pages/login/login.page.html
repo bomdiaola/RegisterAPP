@@ -8,22 +8,24 @@
   </div>
   <form>
     <ion-item class="email-text">
+      <ion-label color="light" position="floating">Email</ion-label>
       <ion-label position="floating">u.suario@duocuc.cl</ion-label>
       <ion-input type="email" name="email" required></ion-input>
     </ion-item>
 
     <ion-item class="password-text" >
+      <ion-label color="light" position="floating">Contraseña</ion-label>
       <ion-label position="floating">Introduce tu contraseña</ion-label>
       <ion-input type="password" name="password" required></ion-input>
     </ion-item>
     
-    <ion-button routerLink="/home" class="boton-login" expand="full"  type="submit">Iniciar sessión</ion-button>
+    <ion-button routerLink="/home" class="boton-login" expand="block"  type="submit">Iniciar sessión</ion-button>
   </form>
 
 <div class="Google-text">
+  O inicia sesion con Google
   <p>
-    O inicia sesión con Google
-    <ion-button class="boton-google" expand="full" type="submit">
+    <ion-button color="medium" shape="round" type="submit">
       <ion-icon name="logo-google" class="icon-google"></ion-icon>
     </ion-button>
   </p>

@@ -1,27 +1,45 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.welcome-toolbar{
+    --background: #ffffff;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.welcome-title{
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 22px;
+    text-align: left;
+.icon-user{
+    width: 110%;
+    height: auto;
+    background-color: #002138;
+
+}
+}
+.home-title{
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 23px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
 
-  color: #8c8c8c;
-
-  margin: 0;
+.logo-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    --img{
+        width: 10%; /*no funca???*/
+        height: auto;
+    }
 }
 
-#container a {
-  text-decoration: none;
+.boton-login{
+    border-radius: 20px;
+    margin-top: 50px;
+    --background: #002138;
+    --color: #ffffff;
+}
+.help-text{
+    margin-left: 200px;
+    margin-top: 100px;
 }

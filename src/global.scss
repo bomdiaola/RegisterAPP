@@ -27,10 +27,17 @@
 
 ion-content {
     --background: #ffffff;
+    --font-family: 'Open Sans', sans-serif;
+  }
+  
+ion-header {
+    --background: #ffffff;
+    --font-family: 'Open Sans', sans-serif;
+
   }
 
 ion-item, ion-input {
     --background: transparent;
-    border: none; /* Eliminar bordes si es necesario */
+    border: none;
   }
 
