@@ -1,45 +1,72 @@
-.welcome-toolbar{
+.welcome-toolbar {
     --background: #ffffff;
 }
 
-.welcome-title{
+.welcome-title {
     color: black;
     font-family: 'Open Sans', sans-serif;
     font-weight: bolder;
     font-size: 22px;
     text-align: left;
-.icon-user{
-    width: 110%;
-    height: auto;
-    background-color: #002138;
+}
 
-}
-}
-.home-title{
+.home-title {
     color: black;
     font-family: 'Open Sans', sans-serif;
     font-weight: bolder;
     font-size: 23px;
 }
 
+.logo-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 40vh;
+    margin-bottom: 20px; 
+  }
+  
+.ion-img {
+    width: auto; 
+    height: auto;
+    
+  }
 
-.logo-container{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    --img{
-        width: 10%; /*no funca???*/
-        height: auto;
-    }
-}
-
-.boton-login{
+.boton-login {
     border-radius: 20px;
     margin-top: 50px;
     --background: #002138;
     --color: #ffffff;
 }
-.help-text{
-    margin-left: 200px;
-    margin-top: 100px;
+
+.help-text {
+    margin-left: flex;
+    margin-top: f;
+}
+
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 18px;
+    }
+
+    .home-title {
+        font-size: 20px;
+    }
+
+    .logo-container {
+        --img {
+            width: 50%;
+        }
+    }
+
+    .help-text {
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    .logo-container {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        height: 40vh;
+        margin-bottom: 20px; 
+      }
 }
