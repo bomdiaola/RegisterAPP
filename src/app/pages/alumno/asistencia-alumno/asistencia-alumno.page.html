@@ -1,0 +1,15 @@
+<ion-content class="ion-padding">
+  <div class="logo-container">
+    <ion-img src="../../../assets/RegisterAPPlogo.svg" alt="Logo de la aplicación"></ion-img>
+  </div>
+    <ion-card>
+      <ion-card-header (click)="toggleCard()">
+        <ion-card-title>Nombre de la asignatura y porcentaje de asistencia</ion-card-title>
+      </ion-card-header>
+      <ion-card-content *ngIf="showInfo">
+        <p>Acá va la fecha y el estado de la asistencia (presente/ausente) y al final del semestre el porcentaje total de asistencia   
+          indicando si pasó el ramo o reprovó por asistencia       
+        </p> 
+      </ion-card-content>
+    </ion-card>
+</ion-content>
