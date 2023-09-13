@@ -1,1 +1,3 @@
-node_modules
+/angular/
+/node_modules/
+.angular/cache/16.2.1/angular-webpack/edc4e1827703f4c8b3983c2e7e0ccd9a8a95b8fe/11.pack
