@@ -22,13 +22,22 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
-  },  {
+  },
+  {
     path: 'recoverypass',
     loadChildren: () => import('./pages/recoverypass/recoverypass.module').then( m => m.RecoverypassPageModule)
   },
   {
     path: 'reset-password',
     loadChildren: () => import('./pages/reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
+  },
+  {
+    path: 'pro-home',
+    loadChildren: () => import('./pages/profesor/pro-home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'asistencia',
+    loadChildren: () => import('./pages/profesor/asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
   },
 
 ];
