@@ -1,13 +1,94 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>asistencia</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">asistencia</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+
+  <div class="contenedor">
+    <div class="sidebar">
+      <ion-img src="../../../assets/RegisterAPPlogo.svg" alt="" class="logo"></ion-img>
+
+      <div class="menu">
+        <button mat-button [matMenuTriggerFor]="menu">Panel de Control</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </div>
+
+    </div>
+
+    <div class="cabezera" style="margin-top: -215px;">
+
+      <img src="../../../../assets/icon/profile-user.png" alt="">
+
+
+      <h1>Remy Parker</h1>
+
+      <h2>
+        Bienvenido, Remy Parker.
+      </h2>
+      <h3>
+        Aca prodras visualizar, administrar y permitir que tus alumnos resgistren su asistencia.
+      </h3>
+
+
+    </div>
+
+    <div class="tabla" style="margin-top: 50px;">
+
+      <h4 class="titulo">Alumnos</h4>
+
+      <table>
+        <thead>
+          <th>Nombre</th>
+          <th>Status </th>
+          <th>Fecha</th>
+          <th> ID</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sebastian Piñera</td>
+            <td>Presente</td>
+            <td>16 Sep, 2023</td>
+            <td>36568-235</td>
+          </tr>
+          <tr>
+            <td>Gabriel Boric</td>
+            <td>Presente</td>
+            <td>16 Sep, 2023</td>
+            <td>36568-235</td>
+          </tr>
+          <tr>
+            <td>Salvador Allende</td>
+            <td>Ausente</td>
+            <td>16 Sep, 2023</td>
+            <td>36568-235</td>
+          </tr>
+          <tr>
+            <td>Barack Obama</td>
+            <td>Presente</td>
+            <td>16 Sep, 2023</td>
+            <td>36568-235</td>
+          </tr>
+          <tr>
+            <td>Vladímir Putin</td>
+            <td>Presente</td>
+            <td>16 Sep, 2023</td>
+            <td>36568-235</td>
+          </tr>
+
+          <tr>
+            <td>Papa Francisco</td>
+            <td>Presente</td>
+            <td>16 Sep, 2023</td>
+            <td>36568-235</td>
+          </tr>
+         
+         
+         
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
 </ion-content>

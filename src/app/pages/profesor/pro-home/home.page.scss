@@ -6,7 +6,7 @@
 .contenedor{
     width: 250px;
     height: 100%;
-    background: rgb(70, 58, 58);
+    background-color: #faf7f7;
 }
 
 .cabezera{
@@ -14,7 +14,7 @@
     height: 150px;
     margin-left: 250px;
     margin-top: px;
-    background: rgb(224, 215, 215);
+    background: #f0ecec;
 }
 
 .cabezera h1 {
@@ -22,17 +22,18 @@
     margin-top: -35px;
     color: black;
     font-size: medium;
+    
 }
 .cabezera h2 {
     color: black;
-    margin-left: 100px;
+    margin-left: 180px;
     text-align: justify;
     margin-top: -50px;
 }
 
 .cabezera h3 {
     color: rgba(87, 69, 69, 0.384);
-    margin-left: 100px;
+    margin-left: 180px;
     text-align: justify;
     font-size: small;
 }
@@ -40,6 +41,48 @@
 .cabezera img {
    width: 45px;
    margin-left: 1300px;
-   margin-top: 65px;
+   margin-top: 55px;
    
+}
+
+.tabla{
+    width: 1310px;
+    height: 560px;
+    background: #f0ecec;
+    margin-left: 420px;
+    border-radius: 35px;
+    margin-top: -100;
+    
+}
+
+.titulo {
+  padding-left: 50px;
+  padding-top: 20px;
+  color: black;
+ 
+}
+
+.menu{
+    color: black;
+}
+
+th {
+    padding: 15px 50px;
+    color: black;
+}
+
+
+td {
+    padding: 4px 70px;
+    border-bottom: solid 1px #faf7f7;
+    font-size: medium;
+    color: black;
+}
+
+.Qr {
+    width: 28px;
+    height: 28px;
+    margin-left: 50px;
+    margin-top: 19px;
+    
 }
