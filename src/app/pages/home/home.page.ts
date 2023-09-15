@@ -10,6 +10,7 @@ export class HomePage {
   constructor(private navCtrl: NavController) {}
 
   openUserProfile() {
+    // Metodo para navegar a la futura pagina de perfil de usuario. 
     this.navCtrl.navigateForward('/perfil-usuario');
   }
 }

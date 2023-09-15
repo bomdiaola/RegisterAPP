@@ -1,75 +1,75 @@
 
 .ion-content {
 
-    display: auto;
-    justify-content: center;
-    align-items: center; 
-    height: 100vh;
-    background-color: white;
-    
-  }
+  display: auto;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
+  background-color: white;
   
+}
+
 .login-text{
-    color: #002138;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bolder;
-    font-size: 28px;
+  color: #002138;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
+  font-size: 28px;
 }
 .boton-login {
-    
-    border-radius: 20px;
-    margin-top: 40px;
-    --background: #002138;
-    --color: #ffffff;
-  }
-
-  .boton-google {
-    background-color: #cccccc; 
-    border: none; 
-    padding: 0; 
-  }
   
+  border-radius: 20px;
+  margin-top: 40px;
+  --background: #002138;
+  --color: #ffffff;
+}
+
+.boton-google {
+  background-color: #cccccc; 
+  border: none; 
+  padding: 0; 
+}
+
 .icon-google {
-    color: #ffffff; 
-  }
-  
+  color: #ffffff; 
+}
+
 .logo-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 30vh;
-    margin-bottom: 20px; 
-  }
-  
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 30vh;
+  margin-bottom: 20px; 
+}
+
 .ion-img {
-    width: auto; 
-    height: auto;
-    
-  }
+  width: auto; 
+  height: auto;
   
+}
+
 .email-text {
-    color: gray;
-  }
+  color: gray;
+}
 .password-text {
-    color: gray;
+  color: gray;
+}
+
+.Google-text {
+  text-align: center;
+  color: gray;
+}
+
+.ion-text-register-forget{
+  margin-top: 100px;
+}
+
+
+.forget-text{ 
+  color: #717171;
+  margin-right: 100px;
+}
+
+.register-text{
+  color: #FBB41C;
+  float: right;
   }
-
-  .Google-text {
-    text-align: center;
-    color: gray;
-  }
-
-  .ion-text-register-forget{
-    margin-top: 100px;
-  }
-
-
-  .forget-text{ 
-    color: #717171;
-    margin-right: 100px;
-  }
-
-  .register-text{
-    color: #FBB41C;
-  }
-

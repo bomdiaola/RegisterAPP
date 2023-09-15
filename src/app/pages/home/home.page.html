@@ -3,7 +3,8 @@
     <ion-toolbar class="welcome-toolbar">
     <ion-title class="welcome-title">Bienvenido pepito</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="openUserProfile()">
+      <ion-button (click)="openUserProfile()"> <!-- 
+        Cuando se hace click en esta funcion activa 'openUserProfile' del .ts -->
         <ion-icon class="icon-user" name="person-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -17,6 +18,7 @@
     <ion-button routerLink="/asistencia-alumno" class="boton-login" expand="block"  type="submit">Asistencias</ion-button>
 
     <p class="ion-text-register-forget">
-      <a class="help-text" routerLink="/#">¿Necesitas ayuda?</a>
+      <a class="ion-text-help" routerLink="/#">¿Necesitas ayuda?</a> <!-- el routerlink para navegar 
+      a las demás paginas -->
     </p>
 </ion-content>

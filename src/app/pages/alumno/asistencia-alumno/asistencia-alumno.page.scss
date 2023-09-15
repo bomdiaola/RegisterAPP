@@ -1,17 +1,71 @@
+ion-card{
+  color: #000000;
 
+}
+.left-content {
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido dentro del encabezado */
+}
+.asignatura-texto {
+  margin-left: 10px; /* Ajusta el espacio entre el icono y el texto según tus preferencias */
+}
+.list-background{  /* Fondo de toda la card*/
+  background-color: #ffffff; 
+}
+.card-background{ 
+  background-color: #e8eaf6;
+}
+.inside-list-background{
+  background-color: #d6d6d6; 
+}
+ion-icon{
+  color: #000000;
+}
+.asignatura-texto{
+  color: #000000;
+  font-size: 18px; /* Ajusta el tamaño del título de la asignatura según tus necesidades */
+  margin-left: 10; /* Ajusta el espaciado entre el icono y el título de la asignatura */
 
-
-
-.logo-container {
+}
+.texto{
+  color: #000000;
+}
+.texto-asistencia{
+  color: #000000;
+  text-align: right;
+}
+/* Pantallas pequeñas */
+@media (max-width: 768px) {
+  .logo-container {
+    height: auto; 
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 20vh;
-    margin-bottom: 10px; 
+    justify-content: center;
+    align-items: center;
   }
-  
-ion-img {
-    width: 70%; 
-    height: auto;
-    
+
+  ion-img {
+    width: 80%; 
   }
+
+  .title-container {
+    margin-top: 20px; 
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 769px) {
+  .logo-container {
+    height: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ion-img {
+    width: 30%; 
+  }
+
+  .title-container {
+    margin-top: 10px; 
+  }
+}

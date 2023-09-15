@@ -1,15 +1,27 @@
 <ion-content class="ion-padding">
   <div class="logo-container">
     <ion-img src="../../../assets/RegisterAPPlogo.svg" alt="Logo de la aplicación"></ion-img>
-  </div>
-    <ion-card>
-      <ion-card-header (click)="toggleCard()">
-        <ion-card-title>Nombre de la asignatura y porcentaje de asistencia</ion-card-title>
+  </div> 
+  <ion-list class="lista-asignaturas" class="list-background">
+    <ion-card *ngFor="let asignatura of asignaturas" class="card-background">
+      <ion-card-header (click)="toggleAsignatura(asignatura)" class="header-container">
+        <div class="left-content">
+          <ion-icon size="large" name="newspaper-outline"></ion-icon>
+          <span class="asignatura-texto">{{ asignatura.nombre }}</span>
+        </div>
       </ion-card-header>
-      <ion-card-content *ngIf="showInfo">
-        <p>Acá va la fecha y el estado de la asistencia (presente/ausente) y al final del semestre el porcentaje total de asistencia   
-          indicando si pasó el ramo o reprovó por asistencia       
-        </p> 
+      <ion-card-content *ngIf="asignatura.expandida">
+        <ion-list class="inside-list-background">
+          <ion-item>
+            <ion-label><span class="texto">Fecha</span></ion-label>
+            <ion-label><span class="texto-asistencia">Asistencia</span></ion-label>
+          </ion-item>
+          <ion-item *ngFor="let dia of asignatura.dias">
+            <ion-label><span class="texto">{{ dia.fecha }}</span></ion-label>
+            <ion-label><span class="texto-asistencia">{{ dia.presente ? 'Presente' : 'Ausente' }}</span></ion-label>
+          </ion-item>
+        </ion-list>
       </ion-card-content>
     </ion-card>
+  </ion-list>
 </ion-content>
