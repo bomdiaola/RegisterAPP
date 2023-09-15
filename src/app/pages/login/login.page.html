@@ -10,16 +10,16 @@
     <ion-item class="email-text">
       <ion-label color="light" position="floating">Email</ion-label>
       <ion-label position="floating">u.suario@duocuc.cl</ion-label>
-      <ion-input type="email" name="email" required></ion-input>
+      <ion-input [(ngModel)]="email" type="email" name="email" required></ion-input>
     </ion-item>
 
     <ion-item class="password-text" >
       <ion-label color="light" position="floating">Contraseña</ion-label>
       <ion-label position="floating">Introduce tu contraseña</ion-label>
-      <ion-input type="password" name="password" required></ion-input>
+      <ion-input [(ngModel)]="password" type="password" name="password" required></ion-input>
     </ion-item>
     
-    <ion-button routerLink="/home" class="boton-login" expand="block"  type="submit">Iniciar sessión</ion-button>
+    <ion-button (click)="IrHomeAlumno()" (click)="IrHomeProfesor()" class="boton-login" expand="block"  type="submit">Iniciar sessión</ion-button>
   </form>
 
 <div class="Google-text">
