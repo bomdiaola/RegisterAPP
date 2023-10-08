@@ -8,7 +8,7 @@ import { AnimationController } from '@ionic/angular';
 })
 export class AsistenciaPage implements OnInit {
 
-  constructor(private aniCtrl: AnimationController) { }
+  constructor() { }
 
   ngOnInit() {
   }
