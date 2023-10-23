@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title slot="start">Profesor: Remy Parker</ion-title>
+    <ion-title class="center-title">Asignatura: Comunismo 5</ion-title>
+    <ion-title class="center-title">Seccion: 003D</ion-title>
+    <ion-title class="right-title" slot="end">Fecha: 10/09/2011</ion-title>
+    <ion-title class="right-title" slot="end">Hora: 12:15</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-content-bg">
+  <ion-grid class="ion-container">
+    <ion-row class="ion-center">
+      <ion-col class="ion-white-box" size="12" size-md="12" offset-md="0">
+        <ion-text class="steps-text">
+          <h2>¿Cómo registrar tu asistencia?</h2>
+          <ol>
+            <li>Abre RegisterAPP en tu teléfono.</li>
+            <li>Inicia sesión con tu cuenta.</li>
+          <li>Presiona "Registra tu asistencia" y escanea!</li>
+          </ol>
+        </ion-text>
+        <div class="qr-container">
+          <qrcode [qrdata]="'Your data string'" [width]="300" [errorCorrectionLevel]="'M'"></qrcode>
+        </div>
+        <div class="logo-container">
+          <ion-img src="../../../assets/RegisterAPPlogo.svg" alt="Logo de la aplicación"></ion-img>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -54,7 +54,7 @@ export class AsistenciaAlumnoPage implements OnInit {
       ]
     },
     {
-      nombre: 'Programacion de App Movile',
+      nombre: 'Programacion de App Moviles',
       expandida: false,
       dias: [
         { fecha: '15-02-2023', presente: true },

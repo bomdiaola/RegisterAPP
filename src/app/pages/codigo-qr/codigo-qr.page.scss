@@ -1,0 +1,52 @@
+/* Estilo para el cuerpo con color de fondo #002138 */
+ion-content.ion-content-bg {
+    --background: #002138;
+  }
+  
+  /* Estilo para el contenedor blanco en el centro */
+  ion-grid.ion-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ion-row.ion-center {
+    text-align: center;
+    width: 90%;
+  }
+
+
+  ion-col.ion-white-box {
+    background-color: white;
+    padding: 30px; /* Ajusta el valor de padding si es necesario */
+    border-radius: 20px; /* Ajusta el valor de border-radius si es necesario */
+    width: 100%; /* Establece el ancho al 100% para que se ajuste al contenedor padre */
+    margin-top: 12%;
+  }
+  
+  /* Estilo para el contenedor blanco del código QR */
+  .qr-container {
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    align-items: center;
+    height: 30%;
+  }
+  
+  .steps-text{
+    margin-top: 10px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: #002138;
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: left; 
+    align-items: center; 
+    height: 10vh;
+    margin-bottom: 10px;
+
+    
+}
