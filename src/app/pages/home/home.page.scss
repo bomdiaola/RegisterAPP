@@ -2,20 +2,21 @@
     --background: #ffffff;
 }
 
-.welcome-title {
+.ion-text-center {
     color: black;
     font-family: 'Open Sans', sans-serif;
     font-weight: bolder;
     font-size: 22px;
-    text-align: left;
-}
-
-.home-title {
-    color: black;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bolder;
-    font-size: 23px;
-}
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; /* Asegura que el título no desborde su contenedor */
+    display: flex;
+    align-items: center; /* Centra verticalmente el título */
+    justify-content: flex-start; /* Alinea el título a la izquierda */
+  }
+  
+  
 
 .logo-container {
     display: flex;
@@ -44,7 +45,7 @@ ion-icon {
 
 .help-text {
     margin-left: flex;
-    margin-top: f;
+    margin-top: flex;
 }
 
 .ion-text-help {

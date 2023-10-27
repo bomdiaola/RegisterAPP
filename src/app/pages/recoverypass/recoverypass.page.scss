@@ -4,7 +4,18 @@
     font-weight: bolder;
     font-size: 28px;
 }
+.back-button-container {
+  display: flex;
+  justify-content: flex-start;
+  /* Alinea el contenido a la izquierda de la página */
+  align-items: center;
+  /* Centra verticalmente los elementos */
+}
 
+ion-back-button {
+  margin-right: 10px;
+
+}
 .boton-login {
     
     border-radius: 20px;

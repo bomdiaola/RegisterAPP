@@ -1,24 +1,21 @@
 <ion-content class="ion-padding">
-  <div class="home-title">
-    <ion-toolbar class="welcome-toolbar">
-    <ion-title class="welcome-title">Bienvenido pepito</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="openUserProfile()"> <!-- 
-        Cuando se hace click en esta funcion activa 'openUserProfile' del .ts -->
+  <ion-toolbar class="welcome-toolbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="openUserProfile()">
         <ion-icon class="icon-user" name="person-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
+    <ion-title class="ion-text-center">Wenas :)</ion-title>
   </ion-toolbar>
-  </div>
-  
+
   <div class="logo-container">
     <ion-img src="../../../assets/RegisterAPPlogo.svg" alt="Logo de la aplicación"></ion-img>
   </div>
-    <ion-button routerLink="/registro-alumno" class="boton-login" expand="block"  type="submit">Registra tu asistencia</ion-button>
-    <ion-button routerLink="/asistencia-alumno" class="boton-login" expand="block"  type="submit">Asistencias</ion-button>
+  
+  <ion-button routerLink="/registro-alumno" class="boton-login" expand="block"  type="submit">Registra tu asistencia</ion-button>
+  <ion-button routerLink="/asistencia-alumno" class="boton-login" expand="block"  type="submit">Asistencias</ion-button>
 
-    <p class="ion-text-register-forget">
-      <a class="ion-text-help" routerLink="/#">¿Necesitas ayuda?</a> <!-- el routerlink para navegar 
-      a las demás paginas -->
-    </p>
+  <p class="ion-text-register-forget">
+    <a class="ion-text-help" routerLink="/#">¿Necesitas ayuda?</a>
+  </p>
 </ion-content>
