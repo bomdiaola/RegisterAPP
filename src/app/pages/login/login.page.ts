@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { AuthService } from 'src/app/services/auth.service';
+//import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-login',
@@ -9,30 +10,46 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  email:string='';
-  password:string='';
 
-  constructor(private router:Router) { }
+
+  constructor(private router:Router,
+              private auth: AuthService,
+              ) { }
+
+  credenciales = {
+    email:null ,
+    password:null
+  }
+
+  async login(){
+    console.log('credenciales -', this.credenciales);
+    if (this.credenciales.email && this.credenciales.password) {
+      const res = await this.auth.login(this.credenciales.email, this.credenciales.password);
+      if (res){
+        console.log('login exitoso');
+        this.router.navigate(['/home']);
+      }
+    } else {
+      console.log('Ingrese email y contraseña');
+      
+    }
+  }
 
   ngOnInit() {
   }
 
   // IrHomeAlumno() funcion que permite redireccionar a la pagina home del alumno 
   // ingresando las credenciales pre-definidas acá
-  IrHomeAlumno(){
-    if (this.email=='re.parker@duocuc.cl' && this.password=='1234'){
-
-       this.router.navigate(['/home']);
-    }
+  loginAlumno(){
+    console.log('credenciales', this.credenciales);
   }
   // IrHomeProfesor() funcion que permite redireccionar a la pagina home del profesor 
   // ingresando las credenciales pre-definidas acá
-  IrHomeProfesor(){
-    if (this.email=='re.parker@profesor.cl' && this.password=='1234'){
+  loginProfesor(){
 
        this.router.navigate(['/pro-home']);
     }
 
   }
 
-}
+

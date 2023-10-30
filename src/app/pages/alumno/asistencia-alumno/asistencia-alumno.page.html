@@ -7,7 +7,7 @@
       <ion-card-header (click)="toggleAsignatura(asignatura)" class="header-container">
         <div class="left-content">
           <ion-icon size="large" name="newspaper-outline"></ion-icon>
-          <span class="asignatura-texto">{{ asignatura.nombre }}</span>
+          <span class="asignatura-texto">{{ asignatura.titulo }} {{ asignatura.seccion }}</span>
         </div>
       </ion-card-header>
       <ion-card-content *ngIf="asignatura.expandida">
@@ -18,7 +18,7 @@
           </ion-item>
           <ion-item *ngFor="let dia of asignatura.dias">
             <ion-label><span class="texto">{{ dia.fecha }}</span></ion-label>
-            <ion-label><span class="texto-asistencia">{{ dia.presente ? 'Presente' : 'Ausente' }}</span></ion-label>
+            <ion-label><span class="texto-asistencia"></span></ion-label>
           </ion-item>
         </ion-list>
       </ion-card-content>

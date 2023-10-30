@@ -9,17 +9,19 @@
   <form>
     <ion-item class="email-text">
       <ion-label color="light" position="floating">Email</ion-label>
-      <ion-label position="floating">u.suario@duocuc.cl / u.suario@profesor.cl</ion-label>
-      <ion-input [(ngModel)]="email" type="email" name="email" required></ion-input> <!--[(ngModel)] Necesario para logearse-->
+      <!-- <ion-input [(ngModel)]="email" type="email" name="email" required></ion-input> [(ngModel)] Necesario para logearse--> 
+      <ion-input [(ngModel)]="credenciales.email" type="email" name="email" required></ion-input>
     </ion-item>
 
     <ion-item class="password-text" >
       <ion-label color="light" position="floating">Contraseña</ion-label>
       <ion-label position="floating">Introduce tu contraseña</ion-label>
-      <ion-input [(ngModel)]="password" type="password" name="password" required></ion-input>
+      <!-- <ion-input [(ngModel)]="password" type="password" name="password" required></ion-input> [(ngModel)] Necesario para logearse-->
+      <ion-input [(ngModel)]="credenciales.password" type="password" name="password" required></ion-input>
     </ion-item>
     
-    <ion-button (click)="IrHomeAlumno()" (click)="IrHomeProfesor()" class="boton-login" expand="block"  type="submit">Iniciar sessión</ion-button>
+    <!-- <ion-button (click)="loginAlumno()" (click)="loginProfesor()" class="boton-login" expand="block"  type="submit">Iniciar sessión</ion-button> -->
+    <ion-button (click)="login()" class="boton-login" expand="block"  type="submit">Iniciar sessión</ion-button>
   </form>
 
 <div class="Google-text">

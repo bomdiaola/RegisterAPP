@@ -1,55 +1,29 @@
 <ion-content class="ion-padding">
-  
-<div class="back-button-container">
-  <ion-back-button defaultHref="/login">
-    <ion-icon name="arrow-back"></ion-icon>
-  </ion-back-button>
-</div>
-  
-<div class="register-page">
-  <div class="register-title">
-    <p>Regístrate</p>
+
+  <div class="back-button-container">
+    <ion-back-button defaultHref="/login">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-back-button>
   </div>
-</div>
-  
+
+  <div class="register-page">
+    <div class="register-title">
+      <p>Regístrate</p>
+    </div>
+  </div>
 
   <form>
-
-    <ion-segment value="custom">
-      <ion-segment-button value="custom">
-        <ion-label>Alumno</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="segment">
-        <ion-label>Profesor</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-
     <ion-item class="email-text">
-      <ion-label color="light" position="floating">Introduce tu nombre</ion-label>
-      <ion-input class="text-2" type="email" name="email" required></ion-input>
-    </ion-item>
-
-    <ion-item class="email-text">
-      <ion-label color="light" position="floating">Introduce tu email</ion-label>
-      <ion-input class="text-2" type="email" name="email" required></ion-input>
+      <ion-label position="floating">Introduce tu email</ion-label>
+      <ion-input [(ngModel)]="datos.email" class="text-2" type="email" name="email" required label="Introduce tu email"></ion-input>
     </ion-item>
 
     <ion-item class="password-text">
-      <ion-label color="light" position="floating">Introduce tu contraseña</ion-label>
-      <ion-input class="text-2" type="password" name="password" required></ion-input>
+      <ion-label position="floating">Introduce tu contraseña</ion-label>
+      <ion-input [(ngModel)]="datos.password" class="text-2" type="password" name="password"  label="Introduce tu contraseña"></ion-input>
     </ion-item>
 
-    <ion-item class="password-text">
-      <ion-label color="light" position="floating">Confirma tu contraseña</ion-label>
-      <ion-input class="text-2" type="password" name="confirmPassword" required></ion-input>
-    </ion-item>
-
-    <ion-item class="checkbox-item">
-      <ion-label class="text-TyC">Estoy de acuerdo con los Términos, servicios y la politica de privacidad</ion-label>
-      <ion-checkbox slot="start" [(ngModel)]="acceptTerms" name="acceptTerms"></ion-checkbox>
-    </ion-item>
-
-    <ion-button routerLink="/login" class="boton-login" expand="block" type="submit">Iniciar sesión</ion-button>
+    <ion-button (click)="registrar()" class="boton-login" expand="block" type="submit">Registrarte</ion-button>
   </form>
 
   <p class="ion-text-register-forget">

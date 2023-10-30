@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FirestoreService } from 'src/app/services/firebase.service';
 @Component({
   selector: 'app-asistencia-alumno',
   templateUrl: './asistencia-alumno.page.html',
@@ -7,70 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AsistenciaAlumnoPage implements OnInit {
-  asignaturas = [
-    {
-      nombre: 'Arquitectura',
-      expandida: false,
-      dias: [
-        { fecha: '15-02-2023', presente: true },
-        { fecha: '12-06-2023', presente: false },
-        { fecha: '15-09-2023', presente: false },
-      ]
-    },
-    {
-      nombre: 'Calidad de software',
-      expandida: false,
-      dias: [
-        { fecha: '15-02-2023', presente: true },
-        { fecha: '12-06-2023', presente: false },
-        { fecha: '15-09-2023', presente: false },
-      ]
-    },
-    {
-      nombre: 'Ética para el trabajo',
-      expandida: false,
-      dias: [
-        { fecha: '15-02-2023', presente: true },
-        { fecha: '12-06-2023', presente: false },
-        { fecha: '15-09-2023', presente: false },
-      ]
-    },
-    {
-      nombre: 'Inglés Intermedio',
-      expandida: false,
-      dias: [
-        { fecha: '15-02-2023', presente: true },
-        { fecha: '12-06-2023', presente: false },
-        { fecha: '15-09-2023', presente: false },
-      ]
-    },
-    {
-      nombre: 'Matematica Aplicada',
-      expandida: false,
-      dias: [
-        { fecha: '15-02-2023', presente: true },
-        { fecha: '12-06-2023', presente: false },
-        { fecha: '15-09-2023', presente: false },
-      ]
-    },
-    {
-      nombre: 'Programacion de App Moviles',
-      expandida: false,
-      dias: [
-        { fecha: '15-02-2023', presente: true },
-        { fecha: '12-06-2023', presente: false },
-        { fecha: '15-09-2023', presente: false },
-      ]
-    },
-  ];
+  asignaturas: any[] = [];
 
-  toggleAsignatura(asignatura: any) {
-    asignatura.expandida = !asignatura.expandida;
-  }
-
-
-  constructor() { }
+  constructor(private firestore: FirestoreService) {}
 
   ngOnInit() {
+    this.getAsignaturas();
+  }
+
+  getAsignaturas() {
+    this.firestore.getAsignaturas().subscribe((asignaturasFromFirebase: any[]) => {
+      this.asignaturas = asignaturasFromFirebase;
+    });
+  }
+  getAsistencia() {
+    this.firestore.getAsistencia().subscribe((asignaturasFromFirebase: any[]) => {
+      this.asignaturas = asignaturasFromFirebase;
+    });
+  }
+  
+  toggleAsignatura(asignatura: any) {
+    asignatura.expandida = !asignatura.expandida;
   }
 }
