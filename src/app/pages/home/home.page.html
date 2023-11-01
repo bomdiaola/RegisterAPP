@@ -5,19 +5,25 @@
         <ion-icon class="icon-user" name="person-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Wenas :)</ion-title>
+    <ion-title class="ion-text-center">Bienvenido :)</ion-title>
   </ion-toolbar>
 
   <div class="logo-container">
     <ion-img src="../../../assets/RegisterAPPlogo.svg" alt="Logo de la aplicación"></ion-img>
   </div>
-  
-  <ion-button routerLink="/registro-alumno" class="boton-login" expand="block"  type="submit">Registra tu asistencia</ion-button>
-  <ion-button routerLink="/asistencia-alumno" class="boton-login" expand="block"  type="submit">Asistencias</ion-button>
-  <ion-button (click)="logout()" class="boton-login" expand="block"  type="submit">Logout</ion-button>
 
- 
-  <p class="ion-text-register-forget">
-    <a class="ion-text-help" routerLink="/#">¿Necesitas ayuda?</a>
-  </p>
+  <ion-button routerLink="/registro-alumno" class="boton-centro" expand="block" type="submit">Registra tu
+    asistencia</ion-button>
+  <ion-button routerLink="/asistencia-alumno" class="boton-centro" expand="block" type="submit">Asistencias</ion-button>
+
+
+  <div>
+    <p class="ion-text-register-forget">
+      <a class="ion-text-help" routerLink="/#">¿Necesitas ayuda?</a>
+      <ion-button (click)="logout()" class="boton-login" expand="block" type="submit">
+        <ion-icon name="log-out" slot="start">
+        </ion-icon>Logout</ion-button>
+
+    </p>
+  </div>
 </ion-content>

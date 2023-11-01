@@ -17,6 +17,8 @@ import { environment } from 'src/environments/environment';
 //authentication
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 const firebaseConfig = {
@@ -39,7 +41,8 @@ const firebaseConfig = {
     QRCodeModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule, //Modulo de autenticacion de firebase
-    AngularFirestoreModule //Modulo BDD de firebase
+    AngularFirestoreModule, //Modulo BDD de firebase
+    ReactiveFormsModule,
   ], 
     
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

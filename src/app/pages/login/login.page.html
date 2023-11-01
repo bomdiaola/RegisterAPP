@@ -1,5 +1,4 @@
 <ion-content class="ion-padding">
-  
   <div class="logo-container">
     <ion-img src="../../../assets/RegisterAPPlogo.svg" alt="Logo de la aplicación"></ion-img>
   </div>
@@ -8,13 +7,15 @@
   </div>
   <form (ngSubmit)="login()">
     <ion-item class="email-text">
-      <ion-input [(ngModel)]="credenciales.email" type="email" name="email" label="Email" labelPlacement="floating" placeholder="Ingresa tu email"></ion-input>
+      <ion-input [(ngModel)]="credenciales.email" type="email" name="email" label="Email" labelPlacement="floating"
+        placeholder="Ingresa tu email"></ion-input>
     </ion-item>
 
     <ion-item class="password-text">
-      <ion-input [(ngModel)]="credenciales.password" type="password" name="password" label="Contraseña" labelPlacement="floating" placeholder="Ingresa tu contraseña"></ion-input>
+      <ion-input [(ngModel)]="credenciales.password" type="password" name="password" label="Contraseña"
+        labelPlacement="floating" placeholder="Ingresa tu contraseña"></ion-input>
     </ion-item>
-    
+
     <ion-button class="boton-login" expand="block" type="submit">Iniciar sesión</ion-button>
   </form>
 

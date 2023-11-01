@@ -32,17 +32,31 @@
     height: auto;
     
   }
-ion-icon {
+.icon-user {
     font-size: 50px;
     color: #002138;
 }
-.boton-login {
+.boton-centro {
     border-radius: 20px;
     margin-top: 50px;
     --background: #002138;
     --color: #ffffff;
 }
 
+ion-button.boton-login {
+    font-size: 12px; /* Ajusta el tamaño del texto */
+    padding: 6px 12px; /* Ajusta el padding del botón */
+  
+    position: absolute;
+    bottom: 10px; /* Distancia desde la parte inferior */
+    left: 10px; /* Distancia desde la parte derecha */
+    --background: #002138;
+  }
+
+  ion-icon {
+    font-size: 20px; /* Ajusta el tamaño del ícono */
+    color: #ffffff; /* Ajusta el color del ícono */
+  }
 .help-text {
     margin-left: flex;
     margin-top: flex;

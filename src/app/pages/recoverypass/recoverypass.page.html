@@ -7,11 +7,11 @@
   <div class="recovery-title">
     <p>Recupera tu contraseña</p>
   </div>
-  <form>
+  <form [formGroup]="recuperarUsuarioForm" (ngSubmit)="recuperar()">
     <ion-item class="email-text">
-      <ion-input type="email" name="email" label="Email" labelPlacement="floating" placeholder="Ingresa tu email"></ion-input>
+      <ion-input type="email" name="email" label="Email" labelPlacement="floating" placeholder="Ingresa tu email" formControlName="email"></ion-input>
     </ion-item>
-    <ion-button routerLink="/reset-password" class="boton-login" expand="block" type="submit">Enviar correo de recuperacion</ion-button>
+    <ion-button class="boton-login" expand="block" type="submit">Enviar correo de recuperacion</ion-button>
   </form>
 
   <p class="ion-text-help">

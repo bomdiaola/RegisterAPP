@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 interface UserData {
   nombre: string;
@@ -17,6 +18,7 @@ interface UserData {
   providedIn: 'root'
 })
 export class AuthService {
+
 
   constructor(private authfirebase: AngularFireAuth,
     private firestore: AngularFirestore,

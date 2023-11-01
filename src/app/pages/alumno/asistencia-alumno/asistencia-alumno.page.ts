@@ -8,7 +8,7 @@ import { FirestoreService } from 'src/app/services/firebase.service';
 
 export class AsistenciaAlumnoPage implements OnInit {
   asignaturas: any[] = [];
-
+  
   constructor(private firestore: FirestoreService) {}
 
   ngOnInit() {
@@ -25,6 +25,9 @@ export class AsistenciaAlumnoPage implements OnInit {
       this.asignaturas = asignaturasFromFirebase;
     });
   }
+
+
+  
   
   toggleAsignatura(asignatura: any) {
     asignatura.expandida = !asignatura.expandida;
