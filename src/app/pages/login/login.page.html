@@ -6,32 +6,26 @@
   <div class="login-text">
     <p>Iniciar sesión</p>
   </div>
-  <form>
+  <form (ngSubmit)="login()">
     <ion-item class="email-text">
-      <ion-label color="light" position="floating">Email</ion-label>
-      <!-- <ion-input [(ngModel)]="email" type="email" name="email" required></ion-input> [(ngModel)] Necesario para logearse--> 
-      <ion-input [(ngModel)]="credenciales.email" type="email" name="email" required></ion-input>
+      <ion-input [(ngModel)]="credenciales.email" type="email" name="email" label="Email" labelPlacement="floating" placeholder="Ingresa tu email"></ion-input>
     </ion-item>
 
-    <ion-item class="password-text" >
-      <ion-label color="light" position="floating">Contraseña</ion-label>
-      <ion-label position="floating">Introduce tu contraseña</ion-label>
-      <!-- <ion-input [(ngModel)]="password" type="password" name="password" required></ion-input> [(ngModel)] Necesario para logearse-->
-      <ion-input [(ngModel)]="credenciales.password" type="password" name="password" required></ion-input>
+    <ion-item class="password-text">
+      <ion-input [(ngModel)]="credenciales.password" type="password" name="password" label="Contraseña" labelPlacement="floating" placeholder="Ingresa tu contraseña"></ion-input>
     </ion-item>
     
-    <!-- <ion-button (click)="loginAlumno()" (click)="loginProfesor()" class="boton-login" expand="block"  type="submit">Iniciar sessión</ion-button> -->
-    <ion-button (click)="login()" class="boton-login" expand="block"  type="submit">Iniciar sessión</ion-button>
+    <ion-button class="boton-login" expand="block" type="submit">Iniciar sesión</ion-button>
   </form>
 
-<div class="Google-text">
-  O inicia sesion con Google
-  <p>
-    <ion-button color="medium" shape="round" type="submit">
-      <ion-icon name="logo-google" class="icon-google"></ion-icon>
-    </ion-button>
-  </p>
-</div>
+  <div class="Google-text">
+    O inicia sesión con Google
+    <p>
+      <ion-button color="medium" shape="round" type="submit">
+        <ion-icon name="logo-google" class="icon-google"></ion-icon>
+      </ion-button>
+    </p>
+  </div>
 
   <p class="ion-text-register-forget">
     <a class="forget-text" routerLink="/recoverypass">¿Olvidó su contraseña?</a>

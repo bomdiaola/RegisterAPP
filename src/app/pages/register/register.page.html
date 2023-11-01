@@ -10,20 +10,32 @@
     <div class="register-title">
       <p>Regístrate</p>
     </div>
+
   </div>
 
-  <form>
+  <form (ngSubmit)="registrarUser(email, password)">
+
+    <ion-segment [(ngModel)]="rolSeleccionado" name="rolSeleccionado">
+      <ion-segment-button value="alumno">
+        <ion-label>Alumno</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="profesor">
+        <ion-label>Profesor</ion-label>
+      </ion-segment-button>
+    </ion-segment>
     <ion-item class="email-text">
-      <ion-label position="floating">Introduce tu email</ion-label>
-      <ion-input [(ngModel)]="datos.email" class="text-2" type="email" name="email" required label="Introduce tu email"></ion-input>
+      <ion-input [(ngModel)]="nombre" name="email" class="text-2" type="email" label="Nombre" labelPlacement="floating" placeholder="Ingresa tu nombre"></ion-input>
+    </ion-item>
+
+    <ion-item class="email-text">
+      <ion-input [(ngModel)]="email" name="email" class="text-2" type="email" label="Email" labelPlacement="floating" placeholder="Ingresa tu email"></ion-input>
     </ion-item>
 
     <ion-item class="password-text">
-      <ion-label position="floating">Introduce tu contraseña</ion-label>
-      <ion-input [(ngModel)]="datos.password" class="text-2" type="password" name="password"  label="Introduce tu contraseña"></ion-input>
+      <ion-input [(ngModel)]="password" name="password" class="text-2" type="password" label="Contraseña" labelPlacement="floating" placeholder="Ingresa tu contraseña"></ion-input>
     </ion-item>
 
-    <ion-button (click)="registrar()" class="boton-login" expand="block" type="submit">Registrarte</ion-button>
+    <ion-button class="boton-login" expand="block" type="submit">Registrarte</ion-button>
   </form>
 
   <p class="ion-text-register-forget">

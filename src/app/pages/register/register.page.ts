@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from '@angular/fire/auth';
-import { Usuarios } from 'src/app/interface/usuarios';
 import { AuthService } from 'src/app/services/auth.service';
 import { FirestoreService } from 'src/app/services/firebase.service';
+import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -11,41 +12,49 @@ import { FirestoreService } from 'src/app/services/firebase.service';
 })
 
 export class RegisterPage {
-  acceptTerms: boolean = false; 
+  acceptTerms: boolean = false;
 
-  datos: Usuarios = {	
-    nombre: null!,
-    email: null!,
-    password: null!,
-    perfil: 'Alumno',
-    uid: null!,
-    
-  }
+  nombre: string = '';
+  email: string = '';
+  password: string = '';
+  rolSeleccionado: string = 'alumno'; // Valor predeterminado
 
-  
+
 
   constructor(private auth: AuthService,
-              private firestore: FirestoreService) { }
+    private firestore: FirestoreService,
+    private authService: AuthService,
+    private alertCtrl: AlertController,
+    private router: Router) { }
 
-async registrar() {
-  console.log('datos', this.datos);
-  const res = await this.auth.registrarUser(this.datos).catch(err => {
-    console.log('error', err);
-  });
+  async registrarUser(email: string, password: string) {
+    try {
+      const result = await this.authService.registrarUser(email, password, this.rolSeleccionado, this.nombre);
+      if (result.user) {
+        await this.authService.saveUserInfo(result.user.uid, password, email, this.rolSeleccionado, this.nombre);
+        await this.mostrarAlerta('Éxito', 'Usuario registrado exitosamente');
+        this.router.navigate(['/login']); 
+      } else {
+        await this.mostrarAlerta('Error', 'Error: usuario es nulo');
+      }
+    } catch (error: any) {
+      if (error instanceof Error) {
+        await this.mostrarAlerta('Error', 'Error al registrar usuario: ' + error.message);
+      } else {
+        await this.mostrarAlerta('Error', 'Error al registrar usuario');
+      }
+    }
+  }
 
-  if (res && res.user) {
-    console.log('registro exitoso');
-    const path = 'Usuarios';
-    const id = res.user.uid;
-    this.datos.uid = res.user.uid;
-    this.datos.password = null;
-    await this.firestore.createDoc(this.datos, path, id);
-  } else {
-    console.log('No se pudo registrar el usuario');
+  async mostrarAlerta(titulo: string, mensaje: string) {
+    const alert = await this.alertCtrl.create({
+      header: titulo,
+      message: mensaje,
+      buttons: ['OK']
+    });
+    await alert.present();
   }
 }
 
 
 
-
-}
