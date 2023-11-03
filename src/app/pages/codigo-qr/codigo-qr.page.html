@@ -17,11 +17,11 @@
           <ol>
             <li>Abre RegisterAPP en tu teléfono.</li>
             <li>Inicia sesión con tu cuenta.</li>
-          <li>Presiona "Registra tu asistencia" y escanea!</li>
+            <li>Presiona "Registra tu asistencia" y escanea!</li>
           </ol>
         </ion-text>
-        <div class="qr-container">
-          <qrcode [qrdata]="'Your data string'" [width]="300" [errorCorrectionLevel]="'M'"></qrcode>
+        <div class="qr-container" *ngIf="isProfessor">
+          <qrcode [qrdata]="myAngularxQrCode" [width]="400" [errorCorrectionLevel]="'M'"></qrcode>
         </div>
         <div class="logo-container">
           <ion-img src="../../../assets/RegisterAPPlogo.svg" alt="Logo de la aplicación"></ion-img>

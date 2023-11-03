@@ -8,12 +8,16 @@ import { RegistroAlumnoPageRoutingModule } from './registro-alumno-routing.modul
 
 import { RegistroAlumnoPage } from './registro-alumno.page';
 
+import { NgxScannerQrcodeModule, LOAD_WASM } from 'ngx-scanner-qrcode';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegistroAlumnoPageRoutingModule
+    RegistroAlumnoPageRoutingModule,
+    NgxScannerQrcodeModule
   ],
   declarations: [RegistroAlumnoPage]
 })

@@ -8,7 +8,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+//codigo qr
 import { QRCodeModule } from 'angularx-qrcode';
+import { NgxScannerQrcodeModule, LOAD_WASM } from 'ngx-scanner-qrcode';
 //base de datos
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -39,6 +41,7 @@ const firebaseConfig = {
     IonicModule.forRoot(), 
     AppRoutingModule,
     QRCodeModule,
+    NgxScannerQrcodeModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule, //Modulo de autenticacion de firebase
     AngularFirestoreModule, //Modulo BDD de firebase

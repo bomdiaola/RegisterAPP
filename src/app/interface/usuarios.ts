@@ -6,10 +6,9 @@ export interface Usuarios {
     uid: string | null;
   }
 
-  interface UserData {
-    nombre: string;
-    email: string;
-    password: string;
-    rol: string;
-    uid: string;
-  }
+
+export interface userData {
+  nombre: string;
+  asignatura: string;
+  rol: string;
+}

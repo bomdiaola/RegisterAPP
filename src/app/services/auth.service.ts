@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 interface UserData {
@@ -18,6 +19,7 @@ interface UserData {
   providedIn: 'root'
 })
 export class AuthService {
+  http: any;
 
 
   constructor(private authfirebase: AngularFireAuth,
@@ -81,5 +83,10 @@ export class AuthService {
         this.router.navigate(['/pro-home']); // Ruta para la página de profesor
         break;
     }
+  }
+
+  getQRCodeData(): Observable<any> {
+    // Retorna un Observable que emite los datos del código QR
+    return this.http.get('url_a_tu_base_de_datos');
   }
 }
