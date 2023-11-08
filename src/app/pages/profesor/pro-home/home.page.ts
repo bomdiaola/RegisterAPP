@@ -1,33 +1,65 @@
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { AnimationController } from '@ionic/angular';
-
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Animation, AnimationController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
+import { NavController, AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements AfterViewInit {
+export class HomePage implements OnInit {
 
-  @ViewChild('animacion') animacion!: ElementRef;
-
-  constructor(private aniCtrl: AnimationController) { }
-
-  ngAfterViewInit(): void {
-    const mi_animacion = this.aniCtrl.create()
-    .addElement(this.animacion.nativeElement)
-    .duration(2000)
-    .iterations(Infinity)
-    .keyframes([
-      { offset: 0, transform: 'scale(1)', opacity: '0.5' },
-      { offset: 0.5, transform: 'scale(0.5)', opacity: '1' },
-      { offset: 1, transform: 'scale(1)', opacity: '0.5' },
-    ]);
-    mi_animacion.play();
-  }
+  constructor(
+    private aniCtrl: AnimationController, 
+    private auth: AuthService,
+    private alertCtrl: AlertController, 
+    private navCtrl: NavController,
+    private router: Router) { }
 
   ngOnInit() {
   }
 
-}
+  redirectToHome() {
+    this.router.navigateByUrl('/pro-home'); 
+  }
+  redirectToAsistencia() {
+    this.router.navigateByUrl('/pro-asistencia'); 
+  }
 
+  redirectToCodigoQR() {
+    this.router.navigateByUrl('/codigo-qr'); 
+  }
+
+  asistenciapage() {
+  }
+  async logout() {
+    const alert = await this.alertCtrl.create({
+      header: 'Confirmar logout',
+      message: '¿Estás seguro de que deseas salir de la sesión?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          cssClass: 'alert-button-cancel',
+        },
+        {
+          text: 'Sí',
+          cssClass: 'alert-button-confirm',
+          handler: () => {
+            this.performLogout();
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+  }
+
+  performLogout() {
+    this.auth.logout();
+    this.navCtrl.navigateRoot('/login');
+    console.log('logout exitoso');
+  }
+}

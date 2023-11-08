@@ -23,19 +23,19 @@ export class CodigoQrPage implements OnInit {
   constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore) { }
 
   ngOnInit() {
-    this.afAuth.onAuthStateChanged((user) => {
+    this.afAuth.onAuthStateChanged((user) => { // Comprueba si hay un usuario logueado
       if (user) {
-        const profesorUid = user.uid;
+        const profesorUid = user.uid;// Obtiene el uid del usuario logueado
 
-        this.firestore.collection('Usuarios').doc(profesorUid).get().subscribe((doc) => {
+        this.firestore.collection('Usuarios').doc(profesorUid).get().subscribe((doc) => {// Obtiene los datos del usuario logueado
           if (doc.exists) {
             const userData = doc.data() as UserData; // Indica a TypeScript que estos datos son del tipo UserData
-            const rol = userData.rol;
+            const rol = userData.rol;// Obtiene el rol del usuario logueado
 
-            if (rol === 'profesor') {
+            if (rol === 'profesor') {// Comprueba si el usuario logueado es un profesor
               this.isProfessor = true;
 
-              const qrDataObj = {
+              const qrDataObj = {// Crea un objeto con los datos que se van a codificar en el código QR
                 id: profesorUid,
                 nombre: userData.nombre,
                 asignatura: userData.asignatura,

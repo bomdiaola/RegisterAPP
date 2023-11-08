@@ -1,103 +1,66 @@
-<ion-content [fullscreen]="true">
-  
-  
-  <div class="contenedor">
-    <div class="sidebar">
-      <ion-img src="../../../assets/RegisterAPPlogo.svg" alt="" class="logo"></ion-img>
+ <div class="wrapper">
+  <!-- Sidebar  -->
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <ion-img src="../../../assets/RegisterAPPlogo.svg" alt="Logo de la aplicación" class="logo"></ion-img>
+    <div class="textologo" style="margin-top: -40px;"> 
+      <h3 style="margin: 0;">RegisterApp</h3>
     </div>
-
-    <div class="cabezera" style="margin-top: -215px;">
-      
-      <img src="../../../../assets/icon/profile-user.png" alt="">
-
-
-      <h1 #animacion>Remy Parker</h1>
-
-      <h2>
-        Bienvenido, Remy Parker.
-      </h2>
-      <h3>
-        Aca prodras visualizar, administrar y permitir que tus alumnos resgistren su asistencia.
-      </h3>
-  
-  
-    </div>
-    
-    <div class="tabla" style="margin-top: 50px;">
-
-      <h4 class="titulo">Secciones Tomadas</h4>
-
-      <table>
-        <thead>
-          <th>Secciones</th>
-          <th>alumnos</th>
-          <th>Categoria</th>
-          <th> Carrera</th>
-          <th>Fecha</th>
-          <th>ID</th>
-          <th>QR</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>PGY4121-001D</td>
-            <td>30</td>
-            <td>Verpertino</td>
-            <td>Analista Programador</td>
-            <td>16 Sep, 2023</td>
-            <td>36568-235</td>
-            <img src="../../../../assets/icon/qr-code.png" alt="" class="Qr">
-          
-          </tr>
-          <tr>
-            <td>PGY4121-002D</td>
-            <td>30</td>
-            <td>Diurno</td>
-            <td>Ingeneria Informatica</td>
-            <td>16 Sep, 2023</td>
-            <td>36568-235</td>
-            <img src="../../../../assets/icon/qr-code.png" alt="" class="Qr">
-          </tr>
-          <tr>
-            <td>PGY4121-003D</td>
-            <td>30</td>
-            <td>Diurno</td>
-            <td>Analista Programador</td>
-            <td>16 Sep, 2023</td>
-            <td>36568-235</td>
-            <img src="../../../../assets/icon/qr-code.png" alt="" class="Qr">
-          </tr>
-          <tr>
-            <td>PGY4121-004D</td>
-            <td>30</td>
-            <td>Verpertino</td>
-            <td>Ingeneria Informatica</td>
-            <td>16 Sep, 2023</td>
-            <td>36568-235</td>
-            <img src="../../../../assets/icon/qr-code.png" alt="" class="Qr">
-          </tr>
-          <tr>
-            <td>PGY4121-005D</td>
-            <td>30</td>
-            <td>Diurno</td>
-            <td>Ingeneria Informatica</td>
-            <td>16 Sep, 2023</td>
-            <td>36568-235</td>
-            <img src="../../../../assets/icon/qr-code.png" alt="" class="Qr">
-          </tr>
-          <tr>
-            <td>PGY4121-006D</td>
-            <td>30</td>
-            <td>Verpertino</td>
-            <td>Analista Programador</td>
-            <td>16 Sep, 2023</td>
-            <td>36568-235</td>
-            <img src="../../../../assets/icon/qr-code.png" alt="" class="Qr">
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-     
   </div>
 
-</ion-content>
+
+      <ul class="list-unstyled components">
+          <li class="active">
+              <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Dashboard</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                  <li>
+                    <a routerLink="/pro-home" >Registro de asistencias</a>
+                  </li>
+                  <li>
+                  <a routerLink="/pro-asistencia" >Alumnos</a>
+                </li>
+                  <ion-button (click)="logout()" class="boton-login" expand="block" type="submit">
+                    <ion-icon name="log-out" slot="start"></ion-icon>
+                    Logout
+                  </ion-button>
+              </ul>
+          </li>
+      </ul>
+
+      
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+    <!--<ion-button (click)="toggleSidebar()">Toggle Sidebar</ion-button> -->
+      <div class="tabla" style="margin-top: 50px;">
+
+        <h4 class="titulo">Secciones Tomadas</h4>
+  
+        <table>
+          <thead>
+            <th>Secciones</th>
+            <th>alumnos</th>
+            <th>Categoria</th>
+            <th> Carrera</th>
+            <th>Fecha</th>
+            <th>ID</th>
+            <th>QR</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PGY4121-001D</td>
+              <td>30</td>
+              <td>Verpertino</td>
+              <td>Analista Programador</td>
+              <td>16 Sep, 2023</td>
+              <td>36568-235</td>
+              <img src="../../../../assets/icon/qr-code.png" alt="" class="Qr" routerLink="/codigo-qr">
+            </tbody>
+        </table>
+  
+      </div>
+
+
+  </div>
+</div>

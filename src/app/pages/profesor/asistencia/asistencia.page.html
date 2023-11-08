@@ -1,36 +1,42 @@
-<ion-content [fullscreen]="true">
+<div class="wrapper">
 
-
-  <div class="contenedor">
-    <div class="sidebar">
-      <ion-img src="../../../assets/RegisterAPPlogo.svg" alt="" class="logo"></ion-img>
-
-      <div class="menu">
-        <button mat-button [matMenuTriggerFor]="menu">Panel de Control</button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
-        </mat-menu>
+  <!-- Sidebar  -->
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <ion-img src="../../../assets/RegisterAPPlogo.svg" class="logo"></ion-img>
+      <div class="textologo" style="margin-top: -40px;">
+        <!-- Puedes ajustar el valor del margin-top según sea necesario -->
+        <h3 style="margin: 0;">RegisterApp</h3> <!-- Elimina el margen para que el texto esté más cerca de la imagen -->
       </div>
-
     </div>
 
-    <div class="cabezera" style="margin-top: -215px;">
 
-      <img src="../../../../assets/icon/guarencigarro2.svg" alt="">
+    <ul class="list-unstyled components">
+      <li class="active">
+        <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Dashboard</a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+          <li>
+            <a routerLink="/pro-home">Registro de asistencias</a>
+          </li>
+          <li>
+            <a routerLink="/pro-asistencia">Alumnos</a>
+          </li>
+          <ion-button (click)="logout()" class="boton-login" expand="block" type="submit">
+            <ion-icon name="log-out" slot="start"></ion-icon>
+            Logout
+          </ion-button>
+        </ul>
+      </li>
+    </ul>
 
 
-      <h1>Remy Parker</h1>
+  </nav>
 
-      <h2>
-        Bienvenido, Remy Parker.
-      </h2>
-      <h3>
-        Aca prodras visualizar, administrar y permitir que tus alumnos resgistren su asistencia.
-      </h3>
-
-
-    </div>
+  <!-- Page Content  -->
+  <div id="content">
+    <!--<ion-button (click)="toggleSidebar()">Toggle Sidebar</ion-button> -->
+    <ion-text> conteido de las secciones</ion-text>
 
     <div class="tabla" style="margin-top: 50px;">
 
@@ -81,14 +87,11 @@
             <td>16 Sep, 2023</td>
             <td>36568-235</td>
           </tr>
-         
-         
-         
+
+
+
         </tbody>
       </table>
 
     </div>
-
   </div>
-
-</ion-content>
