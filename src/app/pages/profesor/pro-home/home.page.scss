@@ -104,12 +104,19 @@ a[data-toggle="collapse"] {
     position: relative;
 }
 
-.dropdown-toggle::after {
+.dropdown-toggle {
     display: block;
     position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+    margin-top: -140px;
+}
+
+.logoApp{
+    width: 200px;
+    height: 200px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: -30px;
+
 }
 
 ul ul a {
@@ -239,3 +246,36 @@ ion-button.boton-login {
 .custom-icon::before {
     margin-right: 5px; /* Margen a la derecha del icono para separarlo del texto */
 }
+
+/* Add or modify this in your existing styles */
+
+.top-bar {
+    height: 50px;
+    background-color: #999;
+    color: white;
+    padding: 27px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+  }
+  
+  .top-bar__center {
+    display: flex;
+    align-items: center;
+  }
+  
+  .top-bar__title {
+    margin: 0;
+  }
+  
+  .top-bar__right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  

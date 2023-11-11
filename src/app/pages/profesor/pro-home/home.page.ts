@@ -3,6 +3,8 @@ import { Animation, AnimationController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { NavController, AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-home',
@@ -10,17 +12,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-
+  nombreProfesor: string = '';
   constructor(
     private aniCtrl: AnimationController, 
     private auth: AuthService,
     private alertCtrl: AlertController, 
     private navCtrl: NavController,
-    private router: Router) { }
+    private router: Router,
+    private firestore: AngularFirestore,
+    private afAuth: AngularFireAuth)
+    { }
 
   ngOnInit() {
   }
-
+  
+  
   redirectToHome() {
     this.router.navigateByUrl('/pro-home'); 
   }

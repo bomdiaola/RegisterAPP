@@ -35,10 +35,7 @@ const routes: Routes = [
     path: 'pro-asistencia',
     loadChildren: () => import('./pages/profesor/asistencia/asistencia.module').then(m => m.AsistenciaPageModule)
   },
-  {
-    path: 'registro-alumno',
-    loadChildren: () => import('./pages/alumno/registro-alumno/registro-alumno.module').then(m => m.RegistroAlumnoPageModule)
-  },
+
   {
     path: 'asistencia-alumno',
     loadChildren: () => import('./pages/alumno/asistencia-alumno/asistencia-alumno.module').then(m => m.AsistenciaAlumnoPageModule)
