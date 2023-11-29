@@ -63,8 +63,8 @@ export class HomePage {
       const ubicacionActual = await this.obtenerUbicacionActual();
 
       // Definir el perímetro permitido
-      const ubicacionPermitida = { lat: -33.59855167900821, lng: -70.57906197139616 }; // coordenadas para poner del duoc -33.59855167900821, -70.57906197139616
-
+      const ubicacionPermitida = { lat: -33.62555648266834, lng: -70.59492873206821 }; // coordenadas para poner del duoc -33.59855167900821, -70.57906197139616
+      
       if (this.estaDentroDePerimetro(ubicacionActual, ubicacionPermitida)) {
         const result = await BarcodeScanner.startScan();
 
@@ -135,7 +135,7 @@ export class HomePage {
     actual: { latitude: number; longitude: number },
     permitida: { lat: number; lng: number }
   ): boolean {
-    const radioPermitido = 0.01; // Ajusta el radio permitido según tus necesidades
+    const radioPermitido = 0.09; // Ajusta el radio permitido según tus necesidades
 
     const distancia = Math.sqrt(
       Math.pow(actual.latitude - permitida.lat, 2) +
