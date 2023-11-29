@@ -9,6 +9,9 @@ import { map } from 'rxjs/operators';
 })
 
 export class FirestoreService {
+  getUsuarios() {
+    throw new Error('Method not implemented.');
+  }
   getQRCodeData() {
     throw new Error('Method not implemented.');
   }

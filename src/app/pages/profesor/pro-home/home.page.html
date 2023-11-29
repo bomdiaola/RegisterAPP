@@ -57,11 +57,11 @@
             <th>QR</th>
           </thead>
           <tbody>
-            <tr>
-              <td>PGY4121-001D</td>
-              <td>30</td>
-              <td>Verpertino</td>
-              <td>Analista Programador</td>
+            <tr *ngFor="let asignatura of asignaturas">
+              <td>{{ asignatura?.seccion }}</td>
+              <td>{{ asignatura?.alumnos}}</td>
+              <td>{{ asignatura?.categoria}}</td>
+              <td>Ingeniero Informatico</td>
               <td>16 Sep, 2023</td>
               <td>36568-235</td>
               <img src="../../../../assets/icon/qr-code.png" alt="" class="Qr" routerLink="/codigo-qr">

@@ -5,6 +5,7 @@ import { NavController, AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { FirestoreService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  asignaturas: any[] = [];
   nombreProfesor: string = '';
   constructor(
     private aniCtrl: AnimationController, 
@@ -19,14 +21,16 @@ export class HomePage implements OnInit {
     private alertCtrl: AlertController, 
     private navCtrl: NavController,
     private router: Router,
-    private firestore: AngularFirestore,
-    private afAuth: AngularFireAuth)
+    private Firestore: AngularFirestore,
+    private afAuth: AngularFireAuth,
+    private firestore: FirestoreService)
     { }
 
   ngOnInit() {
+    this.getAsignaturas();
   }
   
-  
+
   redirectToHome() {
     this.router.navigateByUrl('/pro-home'); 
   }
@@ -67,5 +71,16 @@ export class HomePage implements OnInit {
     this.auth.logout();
     this.navCtrl.navigateRoot('/login');
     console.log('logout exitoso');
+  }
+
+  getAsignaturas() {
+    this.firestore.getAsignaturas().subscribe((asignaturasFromFirebase: any[]) => {
+      this.asignaturas = asignaturasFromFirebase;
+    });
+  }
+  getAsistencia() {
+    this.firestore.getAsistencia().subscribe((asignaturasFromFirebase: any[]) => {
+      this.asignaturas = asignaturasFromFirebase;
+    });
   }
 }
