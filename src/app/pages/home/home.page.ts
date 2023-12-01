@@ -14,6 +14,12 @@ import { Geolocation } from '@capacitor/geolocation';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  datosAlumno = {
+    nombre: 'Nombre del alumno',
+    asignatura: 'Asignatura',
+    estado: 'ausente',
+  };
+
   constructor(
     private navCtrl: NavController,
     private auth: AuthService,
@@ -63,7 +69,7 @@ export class HomePage {
       const ubicacionActual = await this.obtenerUbicacionActual();
 
       // Definir el perímetro permitido
-      const ubicacionPermitida = { lat: -33.62555648266834, lng: -70.59492873206821 }; // coordenadas para poner del duoc -33.59855167900821, -70.57906197139616
+      const ubicacionPermitida = { lat: -33.59855167900821, lng: -70.57906197139616 };
       
       if (this.estaDentroDePerimetro(ubicacionActual, ubicacionPermitida)) {
         const result = await BarcodeScanner.startScan();
@@ -76,16 +82,14 @@ export class HomePage {
           // Acceder a los datos del código QR escaneado
           const qrData = result.content;
 
-          // Obtener datos del profesor (puedes obtener estos datos de tu sistema de autenticación)
+          // Obtener datos del profesor
           let user = await this.afAuth.currentUser;
           const idProfesor = user?.uid;
-          const nombreProfesor = 'Nombre del profesor'; // Puedes obtener esto de tu sistema
+          const nombreProfesor = 'Nombre del profesor';
 
           // Crear documento en la colección 'registro_asistencias'
           const fechaHoraGeneracion = new Date().toISOString();
-          const registroAsistenciaRef = this.firestore
-            .collection('registro_asistencias')
-            .doc();
+          const registroAsistenciaRef = this.firestore.collection('registro_asistencias').doc();
 
           // Datos del documento
           const registroAsistenciaData = {
@@ -93,25 +97,19 @@ export class HomePage {
             nombre_profesor: nombreProfesor,
             asignatura: 'Asignatura',
             fecha_hora_generacion: fechaHoraGeneracion,
-            datos_escaneo: qrData, // Agregar los datos del escaneo al documento
+            datos_escaneo: qrData,
           };
 
           await registroAsistenciaRef.set(registroAsistenciaData);
 
-          // Crear subcolección 'asistencias_alumnos' dentro del documento 'registro_asistencias'
-          const asistenciasAlumnosRef = registroAsistenciaRef.collection(
-            'asistencias_alumnos'
-          );
+          // Crear subcolección 'asistencias_alumnos'
+          const asistenciasAlumnosRef = registroAsistenciaRef.collection('asistencias_alumnos');
 
-          // Obtener datos del usuario con rol "alumno" (puedes ajustar esto según tu sistema de autenticación)
-          const datosAlumno = {
-            nombre: 'Nombre del alumno',
-            asignatura: 'Asignatura',
-            estado: 'ausente', // Puedes inicializar el estado como "ausente"
-          };
+          // Actualizar el estado a "presente"
+          this.datosAlumno.estado = 'presente';
 
           // Añadir datos del alumno a la subcolección 'asistencias_alumnos'
-          await asistenciasAlumnosRef.add(datosAlumno);
+          await asistenciasAlumnosRef.add(this.datosAlumno);
 
           // Navegar a la página asistencia-alumno.page y pasar el ID del documento como parámetro
           this.router.navigate(['/asistencia-alumno']);
@@ -122,20 +120,20 @@ export class HomePage {
       }
     } catch (error) {
       console.error('Error al escanear:', error);
-      // Aquí puedes manejar cualquier error que surja durante el escaneo
+      // Manejar cualquier error que surja durante el escaneo
     }
   }
 
   async obtenerUbicacionActual() {
     const coordinates = await Geolocation.getCurrentPosition();
-    return coordinates.coords; // Retorna las coordenadas (latitud, longitud, etc.)
+    return coordinates.coords;
   }
 
   estaDentroDePerimetro(
     actual: { latitude: number; longitude: number },
     permitida: { lat: number; lng: number }
   ): boolean {
-    const radioPermitido = 0.09; // Ajusta el radio permitido según tus necesidades
+    const radioPermitido = 2;
 
     const distancia = Math.sqrt(
       Math.pow(actual.latitude - permitida.lat, 2) +
